@@ -46,10 +46,6 @@ public class ImageActivity extends AppCompatActivity {
                         //.placeholder(R.drawable.download)
                         .error(R.drawable.broken_link)
                         .load(img.getImageUrl());
-
-                ViewGroup.LayoutParams params = (ViewGroup.LayoutParams) headerImage.getLayoutParams();
-                params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-                headerImage.setLayoutParams(params);
             }
 
             @Override

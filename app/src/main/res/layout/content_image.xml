@@ -8,12 +8,17 @@
     tools:context="me.fernandodominguez.galerist.activities.ImageActivity"
     tools:showIn="@layout/activity_image">
 
-    <ImageView
-        android:id="@+id/big_image"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:fitsSystemWindows="false" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample"
+            android:textColor="@color/white"
+            android:padding="20dp" />
+    </RelativeLayout>
 
 </RelativeLayout>
