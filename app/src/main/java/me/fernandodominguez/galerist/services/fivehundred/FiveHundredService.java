@@ -1,7 +1,8 @@
-package me.fernandodominguez.galerist.services;
+package me.fernandodominguez.galerist.services.fivehundred;
 
 import android.os.Handler;
 
+import me.fernandodominguez.galerist.services.AbstractImageService;
 import me.fernandodominguez.pixels.FiveHundredPxClient;
 
 /**

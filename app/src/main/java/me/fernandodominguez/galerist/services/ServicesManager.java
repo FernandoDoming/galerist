@@ -5,6 +5,8 @@ import android.os.Handler;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.fernandodominguez.galerist.services.fivehundred.FiveHundrerPopularService;
+
 /**
  * Created by fernando on 06/12/15.
  */

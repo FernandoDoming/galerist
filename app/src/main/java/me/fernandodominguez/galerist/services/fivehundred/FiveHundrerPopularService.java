@@ -1,10 +1,10 @@
-package me.fernandodominguez.galerist.services;
+package me.fernandodominguez.galerist.services.fivehundred;
 
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-import me.fernandodominguez.pixels.FiveHundredPxClient;
+import me.fernandodominguez.galerist.services.ServicesManager;
 import me.fernandodominguez.pixels.models.PhotosResponse;
 import retrofit.Callback;
 import retrofit.RetrofitError;

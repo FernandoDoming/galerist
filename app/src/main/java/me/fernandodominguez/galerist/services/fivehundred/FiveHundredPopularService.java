@@ -1,4 +1,4 @@
-package me.fernandodominguez.galerist.services;
+package me.fernandodominguez.galerist.services.fivehundred;
 
 import android.os.Handler;
 
