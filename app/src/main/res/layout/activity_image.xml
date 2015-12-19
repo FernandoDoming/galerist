@@ -20,6 +20,7 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/ExpandedAppBar"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
@@ -42,21 +43,6 @@
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
-
-    <!--<ImageView
-        android:id="@+id/big_image"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent"
-        android:theme="@style/AppTheme.TransparentBar"
-        app:popupTheme="@style/AppTheme.PopupOverlay" /> -->
 
     <include layout="@layout/content_image" />
 

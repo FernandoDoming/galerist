@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#FFFFFF</color>
+
+    <color name="lowAttentionText">#99e0e0e0</color>
 </resources>

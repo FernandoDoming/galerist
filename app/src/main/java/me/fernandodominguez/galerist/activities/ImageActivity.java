@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.koushikdutta.ion.Ion;
 
@@ -25,6 +26,8 @@ import retrofit.client.Response;
 public class ImageActivity extends AppCompatActivity {
 
     ImageView headerImage;
+    TextView imageTitle;
+    TextView imageAuthor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class ImageActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Image image = (Image) intent.getSerializableExtra("image");
         headerImage = (ImageView) findViewById(R.id.big_image);
+        imageTitle  = (TextView) findViewById(R.id.image_title);
+        imageAuthor = (TextView) findViewById(R.id.image_author);
 
         FiveHundredPxClient client = new FiveHundredPxClient("KdNLCVlyyYzXUajMBm11VE38FZG7TBJjed1HRJCN");
         client.getBigImage(image.getId(), new Callback<PhotoResponse>() {
@@ -53,6 +58,9 @@ public class ImageActivity extends AppCompatActivity {
                 Log.e("[ImageActivity]","Error loading the image");
             }
         });
+
+        imageTitle.setText(image.getName());
+        //imageAuthor.setText(image.getUser_id());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
