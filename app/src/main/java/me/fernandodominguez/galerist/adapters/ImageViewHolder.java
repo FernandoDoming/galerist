@@ -15,9 +15,9 @@ public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
     public TextView name;
     public ImageView imageView;
-    private PhotosAdapter adapter;
+    private ImagesStaggeredGridAdapter adapter;
 
-    public ImageViewHolder(View itemView, PhotosAdapter adapter) {
+    public ImageViewHolder(View itemView, ImagesStaggeredGridAdapter adapter) {
         super(itemView);
         itemView.setOnClickListener(this);
         name = (TextView) itemView.findViewById(R.id.country_name);

@@ -21,7 +21,7 @@ public class Image implements Serializable{
     @SerializedName("votes_count")
     int votesCount;
     @SerializedName("favorites_count")
-    int favorites_count;
+    int favoritesCount;
 
 
     public int getId() {
@@ -104,11 +104,11 @@ public class Image implements Serializable{
         this.votesCount = votesCount;
     }
 
-    public int getFavorites_count() {
-        return favorites_count;
+    public int getFavoritesCount() {
+        return favoritesCount;
     }
 
-    public void setFavorites_count(int favorites_count) {
-        this.favorites_count = favorites_count;
+    public void setFavoritesCount(int favoritesCount) {
+        this.favoritesCount = favoritesCount;
     }
 }

@@ -14,12 +14,12 @@ import java.util.List;
 import me.fernandodominguez.galerist.R;
 import me.fernandodominguez.pixels.models.Image;
 
-public class PhotosAdapter extends RecyclerView.Adapter<ImageViewHolder> {
+public class ImagesStaggeredGridAdapter extends RecyclerView.Adapter<ImageViewHolder> {
 
     private List<Image> itemList;
     private Context context;
 
-    public PhotosAdapter(Context context, List<Image> itemList) {
+    public ImagesStaggeredGridAdapter(Context context, List<Image> itemList) {
         this.itemList = itemList;
         this.context = context;
     }

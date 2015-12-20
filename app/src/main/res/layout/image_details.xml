@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_details"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/color_palette_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/details_property_name"
+            android:text="@string/color_palette" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/color_palette_title"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/swatch_vibrant"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"/>
+
+            <ImageView
+                android:id="@+id/swatch_vibrant_dark"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"/>
+
+            <ImageView
+                android:id="@+id/swatch_vibrant_light"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"/>
+
+            <ImageView
+                android:id="@+id/swatch_muted"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"/>
+
+            <ImageView
+                android:id="@+id/swatch_muted_dark"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"/>
+
+            <ImageView
+                android:id="@+id/swatch_muted_light"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/cardview_dark_background"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+        <TextView
+            android:id="@+id/tags_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/details_property_name"
+            android:text="@string/tags" />
+
+        <LinearLayout
+            android:id="@+id/image_tags_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tags_title"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

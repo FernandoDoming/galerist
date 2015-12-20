@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.fernandodominguez.galerist.R;
-import me.fernandodominguez.galerist.adapters.PhotosAdapter;
+import me.fernandodominguez.galerist.adapters.ImagesStaggeredGridAdapter;
 import me.fernandodominguez.galerist.services.ServicesManager;
 import me.fernandodominguez.pixels.models.Image;
 import me.fernandodominguez.pixels.models.PhotosResponse;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements
         }
     };
 
-    PhotosAdapter adapter;
+    ImagesStaggeredGridAdapter adapter;
     ServicesManager manager;
     SwipeRefreshLayout refreshLayout;
 
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements
         recyclerView.setLayoutManager(gaggeredGridLayoutManager);
 
         List<Image> imageList = new ArrayList<>();
-        adapter = new PhotosAdapter(this, imageList);
+        adapter = new ImagesStaggeredGridAdapter(this, imageList);
         recyclerView.setAdapter(adapter);
     }
 

@@ -6,4 +6,6 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_image">ImageActivity</string>
+    <string name="color_palette">Color Palette</string>
+    <string name="tags">Tags</string>
 </resources>
