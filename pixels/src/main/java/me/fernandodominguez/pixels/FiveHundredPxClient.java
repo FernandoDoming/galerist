@@ -54,6 +54,9 @@ public class FiveHundredPxClient {
 
         @GET("/photos/{id}")
         void getImage(@Path("id") int id, @Query("image_size") int size, Callback<PhotoResponse> callback);
+
+        @GET("/photos/{id}")
+        void getImage(@Path("id") int id, @Query("image_size") int size, @Query("tags") int tags, Callback<PhotoResponse> callback);
     }
 
     /**/
@@ -62,7 +65,7 @@ public class FiveHundredPxClient {
     }
 
     public void getBigImage(int id, Callback<PhotoResponse> callback){
-        service.getImage(id, 4, callback);
+        service.getImage(id, 4, 1, callback);
     }
 
     public PhotosResponse getImages(){

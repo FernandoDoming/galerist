@@ -24,6 +24,8 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
 import com.koushikdutta.ion.future.ImageViewFuture;
 
+import org.w3c.dom.Text;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -98,19 +100,10 @@ public class ImageActivity extends AppCompatActivity {
         client.getBigImage(image.getId(), new Callback<PhotoResponse>() {
             @Override
             public void success(PhotoResponse photoResponse, Response response) {
-                Image img = photoResponse.getPhoto();
+                image = photoResponse.getPhoto();
 
-                /*
-                ImageViewFuture bitmap = Ion.with(context)
-                        .load(img.getImageUrl())
-                        .withBitmap()
-                        //.placeholder(R.drawable.placeholder_image)
-                        //.error(R.drawable.broken_link)
-                        .intoImageView(headerImage);
-                */
-
-                Future<Bitmap> bmp = Ion.with(context)
-                        .load(img.getImageUrl())
+                Ion.with(context)
+                        .load(image.getImageUrl())
                         .asBitmap()
                         .setCallback(new FutureCallback<Bitmap>() {
                             @Override
@@ -119,7 +112,7 @@ public class ImageActivity extends AppCompatActivity {
                                 Palette.from(result).generate(paletteListener);
                             }
                         });
-
+                populateDetails();
             }
 
             @Override
@@ -130,8 +123,6 @@ public class ImageActivity extends AppCompatActivity {
 
         imageTitle.setText(image.getName());
         //imageAuthor.setText(image.getUser_id());
-
-        populateDetails();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -146,11 +137,22 @@ public class ImageActivity extends AppCompatActivity {
 
     private void populateDetails() {
 
+        LinearLayout tagsContainer = (LinearLayout) findViewById(R.id.image_tags_container);
+        if (image.getTags() != null) {
+            for (String tag : image.getTags()) {
+                View tagView = LayoutInflater.from(this).inflate(R.layout.image_tag, null);
+                TextView tagTextView = (TextView) tagView.findViewById(R.id.image_tag);
+                // Add tags
+                tagTextView.setText(tag);
+                tagsContainer.addView(tagTextView);
+            }
+        }
+
         List<String> printableProperties = Arrays.asList("width", "height" ,
                 "category", "rating", "votesCount", "favoritesCount");
 
+        detailsContainer = (LinearLayout) findViewById(R.id.image_details);
         for (String property : printableProperties) {
-            detailsContainer = (LinearLayout) findViewById(R.id.image_details);
             View row = LayoutInflater.from(this).inflate(R.layout.image_details_row, null);
 
             Class imageClass = Image.class;

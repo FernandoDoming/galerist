@@ -3,6 +3,7 @@ package me.fernandodominguez.pixels.models;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by fernando on 06/12/15.
@@ -22,6 +23,7 @@ public class Image implements Serializable{
     int votesCount;
     @SerializedName("favorites_count")
     int favoritesCount;
+    List<String> tags;
 
 
     public int getId() {
@@ -110,5 +112,13 @@ public class Image implements Serializable{
 
     public void setFavoritesCount(int favoritesCount) {
         this.favoritesCount = favoritesCount;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
     }
 }
